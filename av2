@@ -1,0 +1,273 @@
+/Exercício01 para o exercício 1;
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercício01 {
+   public static void main (String[] args){
+       //Receber do usuário um valor, calcular e exibir a soma de todos os números ímpares entre 0 e aquele valor.
+       Scanner input = new Scanner (System.in);
+       int valor;
+       
+       System.out.println("Insira o valor desejado: ");
+       valor = input.nextInt();
+       
+       int soma = 0;
+       for(int cont= 1; cont<=valor; cont++){
+       soma = soma +cont;
+       cont+=1; 
+       }
+               
+       System.out.println("A soma de todos os números ímpares antecessores a esse é: " + soma);
+   }
+}
+
+
+
+//Exercício02 para o exercício 2;
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercício02 {
+   public static void main (String[] args){
+       //Receber o dia, mês e ano de nascimento e apresentar um menu de opções numéricas 
+       //onde o usuário pode escolher qual dessas informações ele quer imprimir, ou se quer imprimir 
+       //a data no formato Dia/Mês/Ano. Imprima a opção selecionada, encerrando o programa.
+
+        Scanner input = new Scanner (System.in);
+
+        
+        System.out.println("Insira seu dia de nascimento: ");
+        int dia = input.nextInt();
+
+        System.out.println("Insira seu mês de nascimento: ");
+        int mes = input.nextInt();
+        
+        System.out.println("Insira seu ano de nascimento: ");
+        int ano = input.nextInt();
+        
+        System.out.println("Escolha 1 para imprimir seu dia de nascimento;");
+        System.out.println("Escolha 2 para imprimir seu mes de nascimento;");
+        System.out.println("Escolha 3 para imprimir seu ano de nascimento;");
+        System.out.println("Escolha 4 para imprimir a data completa do seu nascimento;");
+        
+        System.out.println("Entre com o número da opção escolhida...");
+        int num = input.nextInt();
+        switch (num) {
+        case 1:
+          System.out.println("Meu dia de nascimento é:" + dia);
+          break;
+        case 2:
+          System.out.println("Meu mes de nascimento é:" + mes);
+          break;
+        case 3:
+          System.out.println("Meu ano de nascimento é: " + ano);
+          break;
+        case 4:
+          System.out.println("Minha data de nascimento completa é: " + dia + "/" + mes + "/" + ano);
+          break;
+          default:
+          System.out.println("Número inválido");      
+    }
+   }
+}
+
+
+
+//Exercício03 para o exercício 3;
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercício03 {
+   public static void main (String[] args){
+       //Ter na saída padrão, o texto: Olá ‘jogador’. Bem-vindo ao “Campo \\ Azul”. 
+       //Operar comando e valor utilizando um único método de saída.
+
+     Scanner input = new Scanner (System.in);
+ 
+     System.out.println ("Olá ‘jogador’. Bem-vindo ao Campo Azul.");
+  }
+}
+
+
+
+//Exercício04 para o exercício 4;
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercício04 {
+   
+   public static void main (String[] args){
+       //Receber da um inteiro que representa um valor em reais;
+       //Calcular o mínimo de notas que podemos utilizar para representar aquele valor;
+       //imprimir as notas utilizadas na saída padrão. Considere a nota de 1 real uma nota válida.
+
+
+     Scanner input = new Scanner (System.in);
+     int valor;
+     int notas_100 = 0;
+     int notas_50 = 0;
+     int notas_20 = 0;
+     int notas_10 = 0;
+     int notas_5 = 0;
+     int notas_2 = 0;
+     int notas_1 = 0;
+
+     System.out.println("Insira o valor em reais desejado...");
+     valor = input.nextInt();
+
+     do {
+      if (valor >= 100) {
+       notas_100++;
+       valor -= 100;
+     } else if (valor >= 50) {
+     notas_50++;
+     } else if (valor >= 20) {
+     notas_20++;
+     valor -= 10;
+     } else if (valor >= 10) {
+     notas_10++;
+     valor -= 5;
+     } else if (valor >= 5) {
+     notas_5++;
+     valor -= 2;
+      } else if (valor >= 2) {
+     notas_2++;
+     valor -= 2;
+     } else if (valor >= 1) {
+     notas_1++;
+     valor -= 1;
+     }
+     } while (valor > 0);
+
+    System.out.printf("NOTAS \n");
+   System.out.printf("%d notas de R$100 \n", notas_100);
+   System.out.printf("%d notas de R$50 \n", notas_50);
+   System.out.printf("%d notas de R$20 \n", notas_20);
+   System.out.printf("%d notas de R$10 \n", notas_10);
+   System.out.printf("%d notas de R$5 \n", notas_5);
+   System.out.printf("%d notas de R$2 \n", notas_2);
+   System.out.printf("%d notas de R$1 \n", notas_1);
+  } 
+}
+
+
+
+//Exercício05 para o exercício 5;
+package exercícios;
+ 
+import java.util.Scanner;
+ 
+public class Exercício05 {
+   @SuppressWarnings("empty-statement")
+   public static void main (String[] args){
+   	//Exibir um menu ao usuário contendo três opções: 1. Fatorial; 2. Soma dos antecessores; 3. Sair;
+   	//Após receber uma das opções acima, o programa deve calcular o que for pedido,
+   	//recebendo os números necessários do usuário para executar o cálculo. O programa deve
+   	//exibir novamente o menu após o resultado até que a opção 3 seja escolhida.
+ 
+ 
+ 	Scanner input = new Scanner (System.in);
+ 	int opcao, numero, resultado = 1;
+ 
+ 	
+     System.out.println("Escolha a opção do menu desejada:");
+ 	System.out.println("1. Fatorial;");
+ 	System.out.println("2. Soma dos antecessores;");
+     System.out.println("3. Sair;");
+ 	opcao = input.nextInt();
+ 	
+ 	
+  	do {
+ 	
+     System.out.println("Digite o número desejado para realizar a operação...");
+  	numero = input.nextInt();
+      	
+  	if (opcao == 1)
+    	  for( int i = 2; i <= numero; i++)
+   	{
+     	resultado *= i;
+  	} else { System.out.println("O resultado final dessa operação é:" + resultado);
+  	}
+      	
+  	if (opcao == 2)
+    	for( int i = 1; i <=numero; i++)
+   	{
+    	resultado += i;
+ 	} else { System.out.println("O resultado final dessa operação é:" + resultado);
+  	}
+   	} while (opcao != 3);
+   }
+}
+
+
+
+//Exercício06 para o exercício 6;
+package exercícios;
+
+import java.util.Scanner;
+
+public class Exercício06 {
+   public static void main (String[] args){
+       //Ler o código dos itens pedidos do cardápio de uma lanchonete e as quantidades desejadas.
+       //Calcule e mostre o valor a ser pago por item (preço * quantidade) e o total geral do pedido.
+       // Considere que o cliente deve informar 0 (zero) quando o pedido deve ser encerrado.
+
+
+     Scanner input = new Scanner (System.in);
+     int quantidade, código;
+     double total = 0;
+ 
+     
+     System.out.println("As opções de lanches disponíveis são:");
+     System.out.println("Refrigerante, código 105;");
+     System.out.println("Cheeseburguer, código 104;");
+     System.out.println("Cachorro Quente, código 100;");  
+     System.out.println("Bauru com ovo, código 102;");
+     System.out.println("Bauru Simples, código 101;");
+     System.out.println("Hambúrguer, código 103;");
+     System.out.println("Digite o código do item escolhido ou digite 0 para encerrar o pedido...");
+     código = input.nextInt();
+     
+     
+      do {
+     
+     System.out.println("Digite a quantidade desejada de tal item...");
+      quantidade = input.nextInt();
+          
+      if (código == 105) {
+          total = (quantidade*3);
+      } else { System.out.println("O valor total do pedido é:" + total);
+      }
+          
+      if (código == 104) {
+          total = (9.30*quantidade);
+      } else { System.out.println("O valor total do pedido é:" + total); 
+      }  
+         
+      if (código == 100) {
+          total = (5.20*quantidade);
+      } else { System.out.println("O valor total do pedido é:" + total);
+      }
+      
+      if (código == 102) {
+          total = (6.50 * quantidade);
+      } else { System.out.println("O valor total do pedido é:" + total);
+      } 
+        
+      if (código == 101) {
+          total = (4.30*quantidade);
+      } else { System.out.println("O valor total do pedido é:" + total);
+      } 
+        
+      if (código == 103) {
+          total = (8.20*quantidade);
+      } else { System.out.println("O valor total do pedido é:" + total);
+      }
+      } while (código != 0);
+      
+      }
+}
